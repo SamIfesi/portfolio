@@ -1,4 +1,3 @@
-"use client";
 import { Section } from "@/components/ui/section";
 import { profile } from "@/data/profile";
 import { Mail } from "lucide-react";
