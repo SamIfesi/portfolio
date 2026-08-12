@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { ThemeProvider } from '@/components/theme-provider';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Sam — Portfolio",
-  description: "Full-stack developer portfolio",
+  title: 'Sam — Portfolio',
+  description: 'Full-stack developer portfolio',
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
