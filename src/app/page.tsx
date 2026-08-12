@@ -10,8 +10,8 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground">
       <Nav />
       <Hero />
-      <Projects />
       <About />
+      <Projects />
       <Contact />
     </main>
   );
