@@ -1,5 +1,3 @@
-'use client';
-
 import { Section } from '@/components/ui/section';
 import Image from '@/components/ui/image';
 import { profile } from '@/data/profile';

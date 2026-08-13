@@ -1,6 +1,8 @@
-import { motion } from "framer-motion";
-import { Section } from "@/components/ui/section";
-import { profile } from "@/data/profile";
+'use client';
+
+import { motion } from 'framer-motion';
+import { Section } from '@/components/ui/section';
+import { profile } from '@/data/profile';
 
 export function Hero() {
   return (
