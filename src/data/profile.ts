@@ -23,7 +23,7 @@ export const profile = {
       name: 'Ticketer',
       img: '/images/ticketer.png',
       description:
-        'A full-stack event ticketing platform — event creation, ticket sales, and check-in.',
+        'Ticketer is a full-stack, multi-tenant web application designed to simplify event creation, ticket management, and real-time attendee communication for organizers. Built with high availability and fast load times in mind, the architecture decouples the frontend from a custom RESTful API backend, ensuring seamless scaling and secure transactions.',
       href: 'https://app.ticketer.website',
       tags: [
         'Full-stack',
@@ -33,6 +33,14 @@ export const profile = {
         'PHP',
         'MySQL',
       ],
+    },
+    {
+      name: 'Women Tech Makers Nsukka',
+      img: '/images/WTM.png',
+      description:
+        'From the Margins to the Mainstream is a collection of true stories — told by women who navigated bias, made radical career pivots, built businesses from nothing, mentored the next generation, and rose to lead in technology.',
+      href: 'https://www.women-techmakers-nsukka.online/',
+      tags: ['Frontend', 'React.js', 'JavaScript', 'CSS', 'SCSS'],
     },
   ],
 };
