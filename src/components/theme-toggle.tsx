@@ -18,7 +18,7 @@ export function ThemeToggle() {
         setTheme(resolvedTheme === "dark" ? "light" : "dark")
       }
       aria-label="Toggle theme"
-      className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 transition-colors hover:border-neutral-400 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500"
+      className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-neutral-600 transition-colors hover:border-border dark:border-border dark:text-neutral-300 dark:hover:border-border"
     >
       {resolvedTheme === "dark" ? (
         <Sun className="h-4 w-4" />

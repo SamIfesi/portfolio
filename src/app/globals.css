@@ -5,11 +5,13 @@
 :root {
   --background: #e2e8f0;
   --foreground: #0f1117;
+  --border: #3b82f6;
 }
 
 .dark {
   --background: #0f1117;
   --foreground: #e2e8f0;
+  --border: #3b82f6;
 }
 
 @theme inline {
@@ -17,6 +19,7 @@
   --color-foreground: var(--foreground);
   --font-sans: ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
+  --color-border: var(--border);
 }
 
 body {

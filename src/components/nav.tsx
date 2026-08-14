@@ -35,7 +35,7 @@ export function Nav() {
       </nav>
 
       {/* Bottom icon dock — mobile only */}
-      <nav className="fixed bottom-4 left-1/2 z-10 -translate-x-1/2 rounded-full border border-neutral-200 bg-background/80 backdrop-blur md:hidden dark:border-neutral-800">
+      <nav className="fixed bottom-4 left-1/2 z-10 -translate-x-1/2 rounded-full border border-border bg-background/80 backdrop-blur md:hidden dark:border-border-800">
         <div className="flex items-center gap-2 px-3 py-2">
           <Link
             href="/"
