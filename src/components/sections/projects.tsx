@@ -15,7 +15,7 @@ export function Projects() {
             href={project.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col justify-between rounded-lg border border-gray-300 p-5 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+            className="group flex flex-col justify-between rounded-lg border border-gray-300 p-5 transition-colors hover:border-border dark:border-neutral-800"
           >
             <div className="relative h-32 w-full overflow-hidden rounded-lg">
               <Image
