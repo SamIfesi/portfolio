@@ -2,7 +2,7 @@ export const profile = {
   name: 'Samrose Ifesinachi',
   myImg: '/images/me.png',
   title: 'Full-Stack Developer',
-  tagline: 'Building Ticketer — a full-stack event ticketing platform.',
+  tagline: 'Founder Of Ticketer — a full-stack event ticketing platform.',
   stack: 'React.js, PHP, JavaScript, and Tailwind CSS',
   about: [
     {
