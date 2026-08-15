@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/section';
 import { profile } from '@/data/profile';
+import { ProfileHeader } from '@/components/ui/profile-header';
 
 export function Hero() {
   const [firstName, ...rest] = profile.name.split(' ');
@@ -36,6 +37,7 @@ export function Hero() {
 
   return (
     <Section className="flex min-h-[60vh] flex-col justify-center">
+      <ProfileHeader />
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
