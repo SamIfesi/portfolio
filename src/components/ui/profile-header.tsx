@@ -7,7 +7,7 @@ import { ContributionGrid } from '@/components/ui/contribution-grid';
 
 export function ProfileHeader() {
   return (
-    <div className="relative mx-auto w-full max-w-3xl pt-32">
+    <div className="relative mx-auto w-full max-w-3xl md:pt-32">
       <div className="relative w-full overflow-hidden rounded-t-2xl bg-neutral-900">
         <ContributionGrid />
       </div>
