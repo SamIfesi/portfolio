@@ -1,6 +1,4 @@
-// src/components/ui/contribution-grid.tsx
 'use client';
-// Needed: this component uses useState/useEffect (fetches data in the browser).
 
 import { useEffect, useState } from 'react';
 import type { ContributionCalendar } from '@/types/github';
@@ -21,7 +19,7 @@ export function ContributionGrid() {
 
   if (error) {
     return (
-      <div className="flex h-full items-center justify-center text-sm text-neutral-500">
+      <div className="flex h-25 items-center justify-center text-sm text-neutral-500">
         Couldn&apos;t load contribution data
       </div>
     );
@@ -36,7 +34,7 @@ export function ContributionGrid() {
             {Array.from({ length: 7 }).map((_, j) => (
               <div
                 key={j}
-                className="h-2.5 w-2.5 rounded-xs bg-neutral-800"
+                className="h-3 w-3 rounded-xs bg-neutral-800"
               />
             ))}
           </div>

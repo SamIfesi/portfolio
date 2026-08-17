@@ -44,7 +44,7 @@ export function About() {
         </p>
 
         <p className="mt-2 text-neutral-600 dark:text-neutral-400 md:text-justify">
-          When I'm offline, you'll find me exploring epic fantasy universes,
+          When I&apos;m offline, you&apos;ll find me exploring epic fantasy universes,
           tinkering with mobile emulator settings, or following European
           football line-ups.
         </p>
