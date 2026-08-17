@@ -36,7 +36,7 @@ export function Hero() {
       : '';
 
   return (
-    <Section className="flex min-h-[60vh] flex-col justify-center">
+    <Section className="flex min-h-[70vh] flex-col justify-center">
       <ProfileHeader />
       <motion.div
         initial={{ opacity: 0, y: 12 }}
