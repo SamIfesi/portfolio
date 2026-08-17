@@ -1,10 +1,9 @@
-// src/app/api/route.ts
 import { NextResponse } from 'next/server';
 
-const QUERY = `
-  query($login: String!) {
+const CONTRIBUTIONS_QUERY = `
+  query($login: String!, $from: DateTime!, $to: DateTime!) {
     user(login: $login) {
-      contributionsCollection {
+      contributionsCollection(from: $from, to: $to) {
         contributionCalendar {
           totalContributions
           weeks {
@@ -20,38 +19,62 @@ const QUERY = `
   }
 `;
 
+function getCurrentYearRange() {
+  const now = new Date();
+  const from = new Date(Date.UTC(now.getFullYear(), 0, 1)).toISOString();
+  const to = now.toISOString();
+  return { from, to };
+}
+
 export async function GET() {
   const login = process.env.GITHUB_USERNAME;
+  const token = process.env.GITHUB_TOKEN;
 
-  const res = await fetch('https://api.github.com/graphql', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ query: QUERY, variables: { login } }),
-    // "no-store" tells Next.js's fetch cache to always hit GitHub fresh
-    // rather than caching this route's output indefinitely.
-    cache: 'no-store',
-  });
-
-  if (!res.ok) {
+  if (!login || !token) {
     return NextResponse.json(
-      { error: 'GitHub API request failed' },
-      { status: res.status }
+      { error: 'Missing GITHUB_USERNAME or GITHUB_TOKEN env var' },
+      { status: 500 }
     );
   }
 
-  const json = await res.json();
-  const calendar =
-    json?.data?.user?.contributionsCollection?.contributionCalendar;
+  try {
+    const { from, to } = getCurrentYearRange();
 
-  if (!calendar) {
+    const res = await fetch('https://api.github.com/graphql', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: CONTRIBUTIONS_QUERY,
+        variables: { login, from, to },
+      }),
+      cache: 'no-store',
+    });
+
+    const json = await res.json();
+
+    if (json.errors) {
+      console.error('GitHub GraphQL error:', json.errors);
+      return NextResponse.json(
+        { error: json.errors[0]?.message ?? 'GraphQL error' },
+        { status: 400 }
+      );
+    }
+
+    const calendar = json.data?.user?.contributionsCollection?.contributionCalendar;
+
+    if (!calendar) {
+      return NextResponse.json({ error: 'No contribution data returned' }, { status: 404 });
+    }
+
+    return NextResponse.json(calendar);
+  } catch (err) {
+    console.error('Route handler crashed:', err);
     return NextResponse.json(
-      { error: 'No contribution data' },
-      { status: 404 }
+      { error: err instanceof Error ? err.message : 'Unknown server error' },
+      { status: 500 }
     );
   }
-
-  return NextResponse.json(calendar);
 }
