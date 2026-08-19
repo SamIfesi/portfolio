@@ -1,28 +1,42 @@
-import { forwardRef, type ComponentPropsWithoutRef, type ElementType, type ReactNode } from "react";
+import {
+  forwardRef,
+  type ReactNode,
+  type InputHTMLAttributes,
+  type TextareaHTMLAttributes,
+} from 'react';
 
-type InputProps<T extends ElementType = "input"> = {
+type SharedProps = {
   label?: string;
   error?: string;
   helper?: string;
   icon?: ReactNode;
   right?: ReactNode;
-  as?: T;
   className?: string;
-  disabled?: boolean;
   fieldId?: string;
-} & Omit<ComponentPropsWithoutRef<T>, "as" | "className" | "disabled">;
+};
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+type InputAsInput = SharedProps &
+  Omit<InputHTMLAttributes<HTMLInputElement>, 'className'> & {
+    as?: 'input';
+  };
+
+type InputAsTextarea = SharedProps &
+  Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'className'> & {
+    as: 'textarea';
+  };
+
+type InputProps = InputAsInput | InputAsTextarea;
+
+const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
   function Input(
     {
-      label = "",
-      error = "",
-      helper = "",
+      label = '',
+      error = '',
+      helper = '',
       icon = null,
       right = null,
-      as: Tag = "input",
-      className = "",
-      disabled = false,
+      as = 'input',
+      className = '',
       fieldId,
       ...props
     },
@@ -30,6 +44,20 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   ) {
     const hasError = Boolean(error);
     const id = fieldId || props.id;
+    const Tag = as;
+
+    const fieldClassName = `w-full rounded-xl border transition-colors duration-180
+      focus:outline-none focus:ring-2 focus:ring-offset-0
+      disabled:cursor-not-allowed disabled:opacity-50
+      touch-manipulation
+      ${icon ? 'pl-10' : 'pl-4'}
+      ${right ? 'pr-10' : 'pr-4'}
+      ${Tag === 'textarea' ? 'min-h-30 resize-y py-3 leading-relaxed' : 'h-12'}
+      ${
+        hasError
+          ? 'border-red-500 focus:ring-red-500/30'
+          : 'border-border focus:ring-border/30'
+      }`;
 
     return (
       <div className={`flex flex-col gap-1.5 ${className}`}>
@@ -46,32 +74,29 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             </div>
           )}
 
-          <Tag
-            ref={ref}
-            id={id}
-            disabled={disabled}
-            aria-invalid={hasError}
-            aria-describedby={
-              hasError
-                ? `${id}-error`
-                : helper
-                  ? `${id}-helper`
-                  : undefined
-            }
-            {...props}
-            className={`w-full rounded-card border transition-colors duration-180
-              focus:outline-none focus:ring-2 focus:ring-offset-0
-              disabled:cursor-not-allowed disabled:opacity-50
-              touch-manipulation
-              ${icon ? "pl-10" : "pl-4"}
-              ${right ? "pr-10" : "pr-4"}
-              ${
-                hasError
-                  ? "border-red-500 focus:ring-red-500/30"
-                  : "border-gray-300 focus:ring-blue-500/30"
+          {Tag === 'textarea' ? (
+            <textarea
+              ref={ref as React.Ref<HTMLTextAreaElement>}
+              id={id}
+              aria-invalid={hasError}
+              aria-describedby={
+                hasError ? `${id}-error` : helper ? `${id}-helper` : undefined
               }
-            `}
-          />
+              className={fieldClassName}
+              {...(props as TextareaHTMLAttributes<HTMLTextAreaElement>)}
+            />
+          ) : (
+            <input
+              ref={ref as React.Ref<HTMLInputElement>}
+              id={id}
+              aria-invalid={hasError}
+              aria-describedby={
+                hasError ? `${id}-error` : helper ? `${id}-helper` : undefined
+              }
+              className={fieldClassName}
+              {...(props as InputHTMLAttributes<HTMLInputElement>)}
+            />
+          )}
 
           {right && (
             <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -81,16 +106,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         </div>
 
         {hasError ? (
-          <p
-            id={`${id}-error`}
-            className="text-xs text-error leading-snug"
-          >
+          <p id={`${id}-error`} className="text-xs text-red-500 leading-snug">
             {error}
           </p>
         ) : helper ? (
           <p
             id={`${id}-helper`}
-            className="text-xs text-muted leading-snug"
+            className="text-xs text-neutral-500 leading-snug"
           >
             {helper}
           </p>
@@ -100,6 +122,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-Input.displayName = "Input";
+Input.displayName = 'Input';
 
 export default Input;
