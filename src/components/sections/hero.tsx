@@ -81,21 +81,21 @@ export function Hero() {
           {profile.tagline}
         </p>
 
-<div className="mt-8 flex flex-wrap gap-3">
-  
-    href="/cv.pdf"
-    download
-    className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
-  >
-    Download CV
-  </a>
-  
-    href="#contact"
-    className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-medium transition-colors hover:border-foreground dark:border-neutral-700"
-  >
-    Get in touch
-  </a>
-</div>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href="/Ifesinachi Eke - CV.pdf"
+            download
+            className="inline-flex items-center gap-2 rounded-full bg-border px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+          >
+            Download CV
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-medium transition-colors hover:border-foreground dark:border-neutral-700"
+          >
+            Get in touch
+          </a>
+        </div>
       </motion.div>
     </Section>
   );
