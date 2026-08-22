@@ -13,18 +13,25 @@ export const profile = {
         'Driven by curiosity and a focus on clean engineering, I build scalable web solutions across fintech, e-commerce, and interactive media. Working primarily with',
     },
   ],
+
+  // FOOTER
   email: 'Ekesamrose@gmail.com',
   socials: [
     { label: 'GitHub', href: 'https://github.com/SamIfesi' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/sam-ifesi' },
   ],
+
+  // PROJECTS
   projects: [
     {
       name: 'Ticketer',
       img: '/ticketer.png',
       description:
         'Ticketer is a full-stack, multi-tenant web application designed to simplify event creation, ticket management, and real-time attendee communication for organizers. Built with high availability and fast load times in mind, the architecture decouples the frontend from a custom RESTful API backend, ensuring seamless scaling and secure transactions.',
-      href: 'https://app.ticketer.website',
+      demoHref: 'https://app.ticketer.website',
+      codeHref: 'https://github.com/SamIfesi/ticketer',
+      role: 'Founder & Full-stack developer',
+      type: 'Event ticketing platform',
       tags: [
         'Full-stack',
         'React.js',
@@ -35,12 +42,17 @@ export const profile = {
         'REST APIs',
       ],
     },
+
     {
       name: 'Women Tech Makers Nsukka',
       img: '/WTM.png',
       description:
         'From the Margins to the Mainstream is a collection of true stories — told by women who navigated bias, made radical career pivots, built businesses from nothing, mentored the next generation, and rose to lead in technology.',
-      href: 'https://www.women-techmakers-nsukka.online',
+
+      demoHref: 'https://www.women-techmakers-nsukka.online',
+      codeHref: '',
+      role: 'Frontend developer',
+      type: 'Community website for book launch',
       tags: ['Frontend', 'React.js', 'JavaScript', 'CSS', 'SCSS'],
     },
     {
@@ -48,15 +60,29 @@ export const profile = {
       img: '/bagbank.png',
       description:
         'Bag Bank is a full-stack fintech mobile banking application that simulates a real digital bank, complete with account creation, card applications, and transfers. Built with a REST API backend and real-time UI feedback, the app handles automated account number generation, deposits, and peer-to-peer transfers.',
-      href: 'https://github.com/SamIfesi/Bag-Bank',
-      tags: ['Full-stack', 'PHP', 'MySQL', 'Apache', 'JavaScript', 'HTML5', 'CSS3'],
+      demoHref: 'https://github.com/SamIfesi/Bag-Bank',
+      codeHref: '',
+      role: 'Solo Full-stack developer',
+      type: 'Mobile Banking webapp',
+      tags: [
+        'Full-stack',
+        'PHP',
+        'MySQL',
+        'Apache',
+        'JavaScript',
+        'HTML5',
+        'CSS3',
+      ],
     },
     {
       name: 'Code & Create Bootcamp Website',
       img: '/codecreate.png',
       description:
         'Code & Create Bootcamp Website is the official public site for the bootcamp, translated from Figma mockups into a fully responsive, pixel-perfect interface. Built collaboratively with a project manager and designer, the site is deployed via continuous Vercel hosting for fast, reliable delivery.',
-      href: 'https://ccb-bootcamp-page-nine.vercel.app',
+      demoHref: 'https://ccb-bootcamp-page-nine.vercel.app',
+      codeHref: '',
+      role: 'Member of Frontend team',
+      type: 'Official website',
       tags: ['Frontend', 'HTML5', 'CSS3', 'JavaScript', 'Figma'],
     },
     {
@@ -64,7 +90,10 @@ export const profile = {
       img: '/nexus.png',
       description:
         'Nexus Capstone Project is an interactive festival event app designed to maximize ticket conversion and clarify event schedules for attendees. Built with a strong focus on UI/UX, the app reduces support inquiries by surfacing the information users need at the right moment.',
-      href: 'https://nexus-project-ruby.vercel.app',
+      demoHref: 'https://nexus-project-ruby.vercel.app',
+      codeHref: '',
+      role: 'Frontend developer',
+      type: 'Bootcamp final project',
       tags: ['Frontend', 'HTML5', 'CSS3', 'JavaScript', 'UI/UX Design'],
     },
     {
@@ -72,7 +101,10 @@ export const profile = {
       img: '/blogapp.png',
       description:
         'Blog Web Application is a dynamic RESTful CRUD app supporting full create, read, update, and delete operations through standard HTTP verbs. Built with asynchronous JavaScript, the app delivers real-time UI updates without full page reloads for a smooth editing experience.',
-      href: 'https://github.com/Ezey-jr/MyFinalProject',
+      demoHref: 'https://github.com/Ezey-jr/MyFinalProject',
+      codeHref: '',
+      role: 'Full-stack developer Team',
+      type: 'Blog website',
       tags: [
         'Full-stack',
         'PHP',
@@ -83,6 +115,36 @@ export const profile = {
         'CSS3',
         'REST APIs',
       ],
+    },
+  ],
+
+  // SKILLS
+  skills: [
+    {
+      category: 'Frontend',
+      items: [
+        'React.js',
+        'JavaScript',
+        'TypeScript',
+        'Tailwind CSS',
+        'Next.js',
+      ],
+    },
+    {
+      category: 'Backend',
+      items: ['PHP', 'Node.js', 'REST API'],
+    },
+    {
+      category: 'Database',
+      items: ['MySQL', 'MongoDB'],
+    },
+    {
+      category: 'Tooling',
+      items: ['Git', 'GitHub', 'Docker', 'VS Code'],
+    },
+    {
+      category: 'Deployment',
+      items: ['Vercel', 'Cloudinary'],
     },
   ],
 };
