@@ -50,7 +50,7 @@ export const profile = {
         'From the Margins to the Mainstream is a collection of true stories — told by women who navigated bias, made radical career pivots, built businesses from nothing, mentored the next generation, and rose to lead in technology.',
 
       demoHref: 'https://www.women-techmakers-nsukka.online',
-      codeHref: '',
+      codeHref: 'https://github.com/SamIfesi/Women-Techmakers',
       role: 'Frontend developer',
       type: 'Community website for book launch',
       tags: ['Frontend', 'React.js', 'JavaScript', 'CSS', 'SCSS'],
@@ -60,8 +60,7 @@ export const profile = {
       img: '/bagbank.png',
       description:
         'Bag Bank is a full-stack fintech mobile banking application that simulates a real digital bank, complete with account creation, card applications, and transfers. Built with a REST API backend and real-time UI feedback, the app handles automated account number generation, deposits, and peer-to-peer transfers.',
-      demoHref: 'https://github.com/SamIfesi/Bag-Bank',
-      codeHref: '',
+      codeHref: 'https://github.com/SamIfesi/Bag-Bank',
       role: 'Solo Full-stack developer',
       type: 'Mobile Banking webapp',
       tags: [
@@ -80,7 +79,7 @@ export const profile = {
       description:
         'Code & Create Bootcamp Website is the official public site for the bootcamp, translated from Figma mockups into a fully responsive, pixel-perfect interface. Built collaboratively with a project manager and designer, the site is deployed via continuous Vercel hosting for fast, reliable delivery.',
       demoHref: 'https://ccb-bootcamp-page-nine.vercel.app',
-      codeHref: '',
+      codeHref: 'https://github.com/noobdev08/ccb-bootcamp-page',
       role: 'Member of Frontend team',
       type: 'Official website',
       tags: ['Frontend', 'HTML5', 'CSS3', 'JavaScript', 'Figma'],
@@ -91,7 +90,7 @@ export const profile = {
       description:
         'Nexus Capstone Project is an interactive festival event app designed to maximize ticket conversion and clarify event schedules for attendees. Built with a strong focus on UI/UX, the app reduces support inquiries by surfacing the information users need at the right moment.',
       demoHref: 'https://nexus-project-ruby.vercel.app',
-      codeHref: '',
+      codeHref: 'https://github.com/SamIfesi/Nexus_Project',
       role: 'Frontend developer',
       type: 'Bootcamp final project',
       tags: ['Frontend', 'HTML5', 'CSS3', 'JavaScript', 'UI/UX Design'],
@@ -102,7 +101,7 @@ export const profile = {
       description:
         'Blog Web Application is a dynamic RESTful CRUD app supporting full create, read, update, and delete operations through standard HTTP verbs. Built with asynchronous JavaScript, the app delivers real-time UI updates without full page reloads for a smooth editing experience.',
       demoHref: 'https://github.com/Ezey-jr/MyFinalProject',
-      codeHref: '',
+      codeHref: 'https://github.com/Ezey-jr/MyFinalProject',
       role: 'Full-stack developer Team',
       type: 'Blog website',
       tags: [
