@@ -1,4 +1,4 @@
-import { Code2, Server, Database, Wrench, Cloud } from 'lucide-react';
+import { Code2, Server, Database, Wrench, Cloud, Webhook } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { profile } from '@/data/profile';
 
@@ -7,6 +7,7 @@ const categoryIcons: Record<string, typeof Code2> = {
   Backend: Server,
   Database: Database,
   Tooling: Wrench,
+  'Integration API': Webhook,
   Deployment: Cloud,
 };
 
@@ -27,7 +28,7 @@ export function Skills() {
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-gray-300 bg-gray-100 px-3 py-1 text-sm text-neutral-700 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300"
+                    className="rounded-full border border-gray-300 bg-gray-100 px-3 py-1 text-sm text-neutral-700 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 hover:border-border hover:dark:text-white transition-colors"
                   >
                     {item}
                   </span>
