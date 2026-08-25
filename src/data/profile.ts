@@ -131,19 +131,23 @@ export const profile = {
     },
     {
       category: 'Backend',
-      items: ['PHP', 'Node.js', 'REST API'],
+      items: ['PHP', 'REST API'],
     },
     {
       category: 'Database',
-      items: ['MySQL', 'MongoDB'],
+      items: ['MySQL'],
     },
     {
       category: 'Tooling',
-      items: ['Git', 'GitHub', 'Docker', 'VS Code'],
+      items: ['Git', 'GitHub', 'Docker', 'VS Code', 'Figma', ],
+    },
+    {
+      category: 'Integration API',
+      items: ['Cloudinary', 'GitHub API', 'Google Console', 'Paystack', 'SendByte' ],
     },
     {
       category: 'Deployment',
-      items: ['Vercel', 'Cloudinary'],
+      items: ['Vercel', 'Render', 'Cloudflare', 'Railway'],
     },
   ],
 };
