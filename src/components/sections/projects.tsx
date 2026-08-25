@@ -5,7 +5,7 @@ import { Section } from '@/components/ui/section';
 import Image from '@/components/ui/image';
 import { Modal } from '@/components/ui/modal';
 import { profile } from '@/data/profile';
-import { ExternalLink  } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 type Project = (typeof profile.projects)[number];
 
@@ -69,15 +69,16 @@ export function Projects() {
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3">
-              {}
-              <a
-                href={selected.demoHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
-              >
-                <ExternalLink className="h-4 w-4" /> Live Demo
-              </a>
+              {selected?.demoHref && (
+                <a
+                  href={selected.demoHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
+                >
+                  <ExternalLink className="h-4 w-4" /> Live Demo
+                </a>
+              )}
               <a
                 href={selected.codeHref}
                 target="_blank"
