@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
 
 interface ModalProps {
@@ -30,14 +31,23 @@ export function Modal({ open, onClose, children }: ModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/60 p-4 pt-[10vh] backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/60 p-6 backdrop-blur-sm"
       onClick={onClose}
     >
-      <div
+      <motion.div
+        className="relative w-full max-w-2xl overflow-y-auto rounded-2xl border border-border bg-background p-6 shadow-2xl"
         role="dialog"
         aria-modal="true"
+        initial={{ opacity: 0, scale: 0.9, y: 16 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.92, y: 10 }}
+        transition={{
+          type: 'spring',
+          stiffness: 380,
+          damping: 21,
+          mass: 0.9,
+        }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-xl rounded-2xl border border-border bg-background p-6 shadow-2xl"
       >
         <button
           onClick={onClose}
@@ -47,7 +57,7 @@ export function Modal({ open, onClose, children }: ModalProps) {
           <X className="h-5 w-5" />
         </button>
         {children}
-      </div>
+      </motion.div>
     </div>
   );
 }
