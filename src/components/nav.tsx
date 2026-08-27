@@ -1,16 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { Home, User, FolderKanban, Mail } from "lucide-react";
+import { Home, User, Sparkles, FolderKanban, Mail } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { useActiveSection } from "@/hooks/use-active-section";
+import { cn } from "@/lib/utils";
 
 const links = [
   { href: "#about", label: "About", icon: User },
+  { href: "#skills", label: "Skills", icon: Sparkles },
   { href: "#projects", label: "Projects", icon: FolderKanban },
   { href: "#contact", label: "Contact", icon: Mail },
 ];
 
 export function Nav() {
+  const activeId = useActiveSection(links.map((l) => l.href.slice(1)));
+
   return (
     <>
       {/* Top nav — md and up, full width */}
@@ -20,15 +25,24 @@ export function Nav() {
             Samrose
           </Link>
           <div className="flex items-center gap-6">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-neutral-500 transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {links.map((link) => {
+              const isActive = activeId === link.href.slice(1);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? "true" : undefined}
+                  className={cn(
+                    "text-sm transition-colors hover:text-border",
+                    isActive
+                      ? "font-medium text-border"
+                      : "text-neutral-500"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <ThemeToggle />
           </div>
         </div>
@@ -46,12 +60,17 @@ export function Nav() {
           </Link>
           {links.map((link) => {
             const Icon = link.icon;
+            const isActive = activeId === link.href.slice(1);
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 aria-label={link.label}
-                className="flex h-10 w-10 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-foreground"
+                aria-current={isActive ? "true" : undefined}
+                className={cn(
+                  "flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:text-foreground",
+                  isActive ? "text-border" : "text-neutral-500"
+                )}
               >
                 <Icon className="h-5 w-5" />
               </Link>
