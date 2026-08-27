@@ -100,7 +100,6 @@ export const profile = {
       img: '/blogapp.png',
       description:
         'Blog Web Application is a dynamic RESTful CRUD app supporting full create, read, update, and delete operations through standard HTTP verbs. Built with asynchronous JavaScript, the app delivers real-time UI updates without full page reloads for a smooth editing experience.',
-      demoHref: 'https://github.com/Ezey-jr/MyFinalProject',
       codeHref: 'https://github.com/Ezey-jr/MyFinalProject',
       role: 'Full-stack developer Team',
       type: 'Blog website',
