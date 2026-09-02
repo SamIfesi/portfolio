@@ -39,3 +39,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+public/SVG/._Copilot_Icon_Black_Clearspace.svg
+public/SVG/._Copilot_Icon_Black.svg
+public/SVG/._Copilot_Icon_White_Clearspace.svg
+public/SVG/._Copilot_Icon_White.svg
+public/SVG/._Copilot_Lockup_Black_Clearspace.svg
+public/SVG/._Copilot_Lockup_Black.svg
+public/SVG/._Copilot_Lockup_White_Clearspace.svg
+public/SVG/._Copilot_Lockup_White.svg
+public/SVG/._GitHub_Copilot_Lockup_Black_Clearspace.svg
+public/SVG/._GitHub_Copilot_Lockup_Black.svg
+public/SVG/._GitHub_Copilot_Lockup_White_Clearspace.svg
+public/SVG/._GitHub_Copilot_Lockup_White.svg
+public/SVG/._GitHub_Invertocat_Black_Clearspace.svg
+public/SVG/._GitHub_Invertocat_Black.svg
+public/SVG/._GitHub_Invertocat_White_Clearspace.svg
+public/SVG/._GitHub_Invertocat_White.svg
+public/SVG/._GitHub_Lockup_Black_Clearspace.svg
+public/SVG/._GitHub_Lockup_Black.svg
+public/SVG/._GitHub_Lockup_White_Clearspace.svg
+public/SVG/._GitHub_Lockup_White.svg
